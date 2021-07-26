@@ -5,9 +5,6 @@ void printarray(int* arr, size_t sizeofarr){
         printf("%d ", arr[i]);
     }
 }
-void newline() {
-    printf("\n");
-}
 
 void quicksort(int* arr, size_t sizeofarr){
     int pivot = sizeofarr - 1;
@@ -36,11 +33,8 @@ int main(){
     size_t sizeofarr = sizeof(arr)/sizeof(int);
 
     printarray(arr, sizeofarr);
-    newline();
     quicksort(arr, sizeofarr);
-    newline();
     printarray(arr, sizeofarr);
-    newline();
 
     return 0;
 }
