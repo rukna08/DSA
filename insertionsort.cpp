@@ -1,4 +1,4 @@
-void i_sort(int* a, size_t s){
+void insertion_sort(int* a, size_t s){
     for(int i = 1; i < s; i++){
         int current = a[i];
         int j = i-1;

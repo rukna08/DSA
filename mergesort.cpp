@@ -42,11 +42,11 @@ void merge(int* a, int l, int m, int r){
     }
 }
 
-void m_sort(int* a, int l, int r){
+void merge_sort(int* a, int l, int r){
     if(l < r){
         int m = (l+r)/2;
-        m_sort(a, l, m);
-        m_sort(a, m+1, r);
+        merge_sort(a, l, m);
+        merge_sort(a, m+1, r);
 
         merge(a, l, m, r);
     }
