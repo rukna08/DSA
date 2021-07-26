@@ -1,16 +1,18 @@
 #include <stdio.h>
 
 void printarray(int* arr, size_t sizeofarr){
+    printf("\n");
     for(size_t i = 0; i < sizeofarr; i++){
         printf("%d ", arr[i]);
     }
+    printf("\n");
 }
 
 void quicksort(int* arr, size_t sizeofarr){
     int pivot = sizeofarr - 1;
     int i = -1;
     int j = 1;
-    for(size_t k = 0; k < sizeofarr; k++){
+    for(size_t k = 0; k < sizeofarr - 1; k++){
         if(arr[j] < arr[pivot]) {
             i++;
 
@@ -23,9 +25,9 @@ void quicksort(int* arr, size_t sizeofarr){
             j++;
         }
     }
-    int temp = arr[pivot];
-    arr[pivot] = arr[j];
-    arr[j] = temp;
+    // int temp = arr[pivot];
+    // arr[pivot] = arr[j];
+    // arr[j] = temp;
 }
 
 int main(){
