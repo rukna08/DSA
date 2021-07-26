@@ -11,8 +11,11 @@ void printarray(int* arr, size_t sizeofarr){
 void quicksort(int* arr, size_t sizeofarr){
     int pivot = sizeofarr - 1;
     int i = -1;
-    int j = 1;
-    for(size_t k = 0; k < sizeofarr - 1; k++){
+    int j = 0;
+
+    int ti = -1;
+
+    for(size_t k = 0; k < sizeofarr - 2; k++){
         if(arr[j] < arr[pivot]) {
             i++;
 
@@ -21,13 +24,15 @@ void quicksort(int* arr, size_t sizeofarr){
             arr[j] = temp;
 
             j++;
+            ti = i;
         } else {
             j++;
         }
     }
-    // int temp = arr[pivot];
-    // arr[pivot] = arr[j];
-    // arr[j] = temp;
+    
+    int temp = arr[pivot];
+    arr[pivot] = arr[ti+1];
+    arr[ti+1] = temp;
 }
 
 int main(){
