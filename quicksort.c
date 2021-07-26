@@ -8,14 +8,14 @@ void printarray(int* arr, size_t sizeofarr){
     printf("\n");
 }
 
-void quicksort(int* arr, size_t sizeofarr){
-    int pivot = sizeofarr - 1;
-    int i = -1;
-    int j = 0;
+void quicksort(int* arr, size_t sizeofarr, int left, int right){
+    int pivot = right - 1;
+    int i = left-1;
+    int j = left;
 
-    int ti = -1;
+    int ti = left-1;
 
-    for(size_t k = 0; k < sizeofarr - 2; k++){
+    for(size_t k = 0; k < right - 2; k++){
         if(arr[j] < arr[pivot]) {
             i++;
 
@@ -38,9 +38,10 @@ void quicksort(int* arr, size_t sizeofarr){
 int main(){
     int arr[] = {7, 2, 1, 8, 6, 3, 5, 4};
     size_t sizeofarr = sizeof(arr)/sizeof(int);
+    int right = (int)sizeofarr;
 
     printarray(arr, sizeofarr);
-    quicksort(arr, sizeofarr);
+    quicksort(arr, sizeofarr, 0, right);
     printarray(arr, sizeofarr);
 
     return 0;
