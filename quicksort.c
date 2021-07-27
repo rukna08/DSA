@@ -8,7 +8,7 @@ void printarray(int* arr, size_t sizeofarr){
     printf("\n");
 }
 
-void quicksort(int* arr, size_t sizeofarr, int left, int right){
+void quicksort(int* arr, int left, int right){
     int pivot = right - 1;
     int i = left-1;
     int j = left;
@@ -41,7 +41,7 @@ int main(){
     int right = (int)sizeofarr;
 
     printarray(arr, sizeofarr);
-    quicksort(arr, sizeofarr, 0, right);
+    quicksort(arr, 0, right);
     printarray(arr, sizeofarr);
 
     return 0;
