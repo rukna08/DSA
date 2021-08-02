@@ -1,16 +1,3 @@
-
-
-/*
-    implementation: binary search tree
-    operations: -insert
-                -search
-                -delete
-                -print: -preorder
-                        -inorder
-                        -postorder
-*/
-
-
 #include <stdlib.h>
 #include <stdio.h>
 
