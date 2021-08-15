@@ -1,7 +1,0 @@
-heapsort
-quicksort
-stack
-queue
-linked list
-hash table
-red black trees
