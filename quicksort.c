@@ -1,12 +1,3 @@
-#include <iostream>
-
-void printarray(int *arr, int n) {
-    for (int i = 0; i < n; ++i){
-        std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
-}
-
 void quicksort(int *arr, int left, int right) {
     int i = left;
     int j = right;
@@ -36,17 +27,4 @@ void quicksort(int *arr, int left, int right) {
     if (i < right){
         quicksort(arr, i, right);
     }
-}
-
-int main() {
-    int arr[] = {500, 1, 25, 27, 3, 597, 39};
-    int sizeofarr = sizeof(arr)/sizeof(int);
-
-    printarray(arr, sizeofarr);
-
-    quicksort(arr, 0, sizeofarr);
-
-    printarray(arr, sizeofarr);
-    
-    return (0);
 }
