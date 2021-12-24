@@ -85,6 +85,25 @@ void deletelast(node** n) {
 
 
 
+// delete the element in the specified position
+void deleteatpos(node** n, int position) {
+    int k = 1;
+    
+    for(node* i = *n; i != NULL; i = i->next) {
+
+        if(k == position-1) {
+            node* j = i->next;
+            i->next = i->next->next;
+            free(j);
+        }
+        
+        k++;
+    }
+}
+
+
+
+
 
 // printing the whole list.
 void printlist(node* n) {
@@ -109,9 +128,7 @@ int main() {
     insert(&n, 3);
     insert(&n, 4);
     
-    printlist(n);
-
-    deletelast(&n);
+    deleteatpos(&n, 3);
 
     printlist(n);
 
