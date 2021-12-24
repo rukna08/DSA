@@ -18,6 +18,7 @@ typedef struct node node;
 
 // insertion of each element one after the other.
 void insert(node** n, int data) {
+
     if(*n == NULL) {
         *n = malloc(sizeof(node));
         (*n)->data = data;
@@ -30,11 +31,14 @@ void insert(node** n, int data) {
     temp->next = NULL;
 
     for(node* i = *n; i != NULL; i = i->next) {
+        
         if(i->next == NULL) {
             i->next = temp;
             return;
         }
+        
     }
+
 }
 
 
@@ -72,14 +76,18 @@ void deletehead(node** n) {
 
 // delete the last element of the list.
 void deletelast(node** n) {
+
     for(node* i = *n; i != NULL; i = i->next) {
+
         if(i->next->next == NULL) {
             node* j = i->next;
             free(j);
             i->next = NULL;
             return;
         }
+    
     }
+
 }
 
 
