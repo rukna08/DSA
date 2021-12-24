@@ -85,7 +85,7 @@ void deletelast(node** n) {
 
 
 
-// delete the element in the specified position
+// delete the element in the specified position.
 void deleteatpos(node** n, int position) {
     int k = 1;
     
