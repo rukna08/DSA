@@ -91,6 +91,11 @@ void insertpos(node** n, int data, int position) {
     
     for(node* i = *n; i != NULL; i = i->next) {
 
+        if(position == 1) {
+            inserthead(n, data);
+            return;
+        }
+
         if(k == position-1) {
 
             if(i->next == NULL) {
@@ -100,11 +105,6 @@ void insertpos(node** n, int data, int position) {
 
                 return;
             }
-
-            // if(position == 1) {
-            //     inserthead(n, data);
-            //     return;
-            // }
 
             node* t = malloc(sizeof(node));
             t->data = data;
@@ -222,7 +222,7 @@ int main() {
     insert(&n, 2);
     insert(&n, 4);
 
-    insertpos(&n, 99, 2);
+    insertpos(&n, 99, 1);
 
     printlist(n);
 
