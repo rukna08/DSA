@@ -1,14 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// node structure
+
+
+
+
+// node structure.
 struct node {
     int data;
     struct node* next;
 };
 typedef struct node node;
 
-// insertion
+
+
+
+
+// insertion of each element one after the other.
 void insert(node** n, int data) {
     if(*n == NULL) {
         *n = malloc(sizeof(node));
@@ -29,18 +37,82 @@ void insert(node** n, int data) {
     }
 }
 
-// printing
+
+
+
+
+// deletion of the whole list.
+void deletelist(node** n) {
+    node* t1 = *n;
+    node* t2;
+
+    while(t1 != NULL) {
+        t2 = t1->next;
+        free(t1);
+        t1 = t2;
+    }
+
+    *n = NULL;
+}
+
+
+
+
+
+// delete the first element of the list.
+void deletehead(node** n) {
+    node* t1 = *n;
+    *n = (*n)->next;
+    free(t1);
+}
+
+
+
+
+
+// delete the last element of the list.
+void deletelast(node** n) {
+    for(node* i = *n; i != NULL; i = i->next) {
+        if(i->next->next == NULL) {
+            node* j = i->next;
+            free(j);
+            i->next = NULL;
+            return;
+        }
+    }
+}
+
+
+
+
+
+// printing the whole list.
 void printlist(node* n) {
+    if(n == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+
     for(node* i = n; i != NULL; i = i->next) printf("%d\n", i->data);
 }
 
+
+
+
+
 int main() {
     node* n = NULL;
-    insert(&n, 1);
-    insert(&n, 1);
-    insert(&n, 1);
-    insert(&n, 1);
+    node* n2 = NULL;
     
+    insert(&n, 1);
+    insert(&n, 2);
+    insert(&n, 3);
+    insert(&n, 4);
+    
+    printlist(n);
+
+    deletelast(&n);
+
     printlist(n);
 
     return 0;
