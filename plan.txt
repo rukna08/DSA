@@ -1,0 +1,13 @@
+Dynamic Programming
+Greedy Algorithms
+Backtracking
+Stack
+Queue
+Mapping Concepts
+Array manipulation
+String manipulation
+Tree
+Graph
+Bit Mapping and Hashing
+Recursion and Heap
+Divide and Conquer
