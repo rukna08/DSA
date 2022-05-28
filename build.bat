@@ -2,5 +2,5 @@
 
 mkdir build
 pushd build
-cl -Zi ..\algorithms\quicksort.c
+cl ..\algorithms\bubblesort.c
 popd
