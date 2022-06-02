@@ -2,5 +2,5 @@
 
 mkdir build
 pushd build
-cl ..\algorithms\bubblesort.c
+cl -Zi ..\data-structures\stack.c
 popd
