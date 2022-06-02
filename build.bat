@@ -2,5 +2,5 @@
 
 mkdir build
 pushd build
-cl -Zi ..\data-structures\stackll.c
+cl -Zi ..\data-structures\queue.c
 popd
