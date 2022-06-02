@@ -33,6 +33,16 @@ void dequeue(queue* q) {
     (q->last)--;
 }
 
+int isfull(queue* q) {
+    if(q->last == QUEUE_SIZE) return 1;
+    return 0;
+}
+
+int isempty(queue* q) {
+    if(q->first == q->last) return 1;
+    return 0;
+}
+
 void printqueue(queue* q) {
     for(int i = 0; i < q->last; i++) {
         printf("%d\n", q->data[i]);
